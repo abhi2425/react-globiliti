@@ -27,7 +27,8 @@ const Dashboard = () => {
           <img src={persons} alt={'persons'} />
         </div>
         <div
-          className='flex m-left-s'
+          style={{ backgroundColor: 'var(--color-profile-2)' }}
+          className='flex m-left-s '
           onClick={() => {
             logOutHandler()
             history.push('/')
