@@ -6,7 +6,6 @@ const SignupContext = createContext()
 export const SignupContextProvider = ({ children }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [loading, setLoading] = useState(false)
-  const [user, setUser] = useState()
   const [alert, setAlert] = useState({ show: false, message: '', type: '' })
 
   useEffect(() => {
@@ -29,7 +28,6 @@ export const SignupContextProvider = ({ children }) => {
           : `Thanks ${data.user?.firstname} for joining us!`
         setAlert({ show: true, type: 'success', message })
         setTimeout(() => setAlert({ ...alert, show: false }), 3500)
-        setUser(data.user)
         localStorage.setItem('token', data.token)
         return data
       }
